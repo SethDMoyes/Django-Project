@@ -1,0 +1,15 @@
+
+<h1>Our ToDo list</h1>
+
+{% if ToDo_list %}
+<ul>
+    {% for ToDo in ToDo_list %}
+        <li>{{ToDo}}</li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>There are no autos in the library.</p>
+ {% endif %}
+ <p><a href="{% url 'ToDo:ToDo_create' %}">Add a ToDo Item</a></p>
+
+ <p>You can <a href="{% url 'logout' %}?next={% url 'ToDo:open' %}">Logout</a></p>

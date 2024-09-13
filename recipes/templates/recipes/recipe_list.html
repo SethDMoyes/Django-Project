@@ -1,0 +1,15 @@
+
+<h1>Our recipe list</h1>
+
+{% if recipe_list %}
+<ul>
+    {% for recipe in recipe_list %}
+        <li>{{recipe}}</li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>There are no autos in the library.</p>
+ {% endif %}
+ <p><a href="{% url 'recipes:recipes_create' %}">Add a recipe</a></p>
+
+ <p>You can <a href="{% url 'logout' %}?next={% url 'recipes:open' %}">Logout</a></p>
